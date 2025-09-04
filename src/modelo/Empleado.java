@@ -25,4 +25,22 @@ public abstract class Empleado implements Bonificable {
         this.incentivo = incentivo;
     }
 
+    public String getCedula() {
+        return cedula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getSalarioXquincena() {
+        return salarioXquincena;
+    }
+
+    public Incentivo getIncentivo() {
+        return incentivo;
+    }
+    
+    
+
 }

@@ -4,17 +4,26 @@ public class Asalariado extends Empleado {
 
     private double salarioMensual;
 
-    public Asalariado(String cedula, String nombre, double salarioXquincena, Incentivo incentivo) {
-        super(cedula, nombre, salarioXquincena, incentivo);
-        this.salarioMensual = salarioXquincena * 2;
+    public Asalariado(String cedula, String nombre, double salarioMensual, Incentivo incentivo) {
+        super(cedula, nombre, 0.0, incentivo);
+        this.salarioMensual = salarioMensual;
     }
     
     public double salarioQuicena() {
-        return salarioMensual/2;
+        if (salarioMensual > 0){
+            return salarioMensual/2;
+        }else {
+            return salarioMensual = 0.0;
+        }  
     }
 
+    public double getSalarioMensual() {
+        return salarioMensual;
+    }
+     
+    @Override
     public String toCSV() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return getCedula() + ";" + getNombre() + ";" + salarioMensual + ";" + salarioQuicena();
     }
 
     @Override

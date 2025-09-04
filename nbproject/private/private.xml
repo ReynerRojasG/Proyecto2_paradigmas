@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Reyner/Documents/NetBeansProjects/Proyecto2/src/Empleado.java</file>
-            <file>file:/C:/Users/Reyner/Documents/NetBeansProjects/Proyecto2/src/Incentivo.java</file>
-            <file>file:/C:/Users/Reyner/Documents/NetBeansProjects/Proyecto2/src/IncentivoAntiguedad.java</file>
-            <file>file:/C:/Users/Reyner/Documents/NetBeansProjects/Proyecto2/src/PorHora.java</file>
-            <file>file:/C:/Users/Reyner/Documents/NetBeansProjects/Proyecto2/src/proyecto2/Proyecto2.java</file>
+            <file>file:/C:/Users/Reyner/Documents/NetBeansProjects/Proyecto2/src/modelo/Asalariado.java</file>
+            <file>file:/C:/Users/Reyner/Documents/NetBeansProjects/Proyecto2/src/modelo/Empleado.java</file>
+            <file>file:/C:/Users/Reyner/Documents/NetBeansProjects/Proyecto2/src/modelo/PorHora.java</file>
+            <file>file:/C:/Users/Reyner/Documents/NetBeansProjects/Proyecto2/src/app/Proyecto2.java</file>
         </group>
     </open-files>
 </project-private>
