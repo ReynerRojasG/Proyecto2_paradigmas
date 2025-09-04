@@ -13,8 +13,6 @@ public class Practicante {
         this.cedula = cedula;
         this.nombre = nombre;
     }
-    
-    
 
     public String toCSV() {
         return "PRACTICANTE;" + getCedula() + ";" + getNombre() + ";" + getApoyoQuincena();

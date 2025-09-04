@@ -1,4 +1,5 @@
 package app;
+import infra.FileManager;
 import modelo.*;
 
 /**
@@ -12,15 +13,23 @@ public class Proyecto2 {
      */
     public static void main(String[] args) {
         Empleado as1 = new Asalariado("604880338", "Makin Artavia", 200000.0, new IncentivoAntiguedad(), 10);
-        Empleado cm1 = new Comisionista("6048454338", "Ryner Rojas",new IncentivoDesempeno(),5,40000,0.5,25);
+        Empleado cm1 = new Comisionista("6048454338", "Reyner Rojas",new IncentivoDesempeno(),5,40000,0.5,25);
         Empleado ph1 = new PorHora("604885538", "Cipriano Rivera", new IncentivoProductividad(), 4, 2000,100);
         Empleado tmp1 = new Temporal("6040232338", "Machita DeCipri", new IncentivoAntiguedad(), 2024,2000,12);
-        Practicante pr1 = new Practicante("6023230338", "Annet Gutierres", 0.0);
+        Practicante pr1 = new Practicante("6023230338", "Annet Gutierrez", 0.0);
         
         System.out.println(as1.toCSV());
         System.out.println(cm1.toCSV());
         System.out.println(ph1.toCSV());
         System.out.println(tmp1.toCSV());
         System.out.println(pr1.toCSV());
+        
+        FileManager fm = new FileManager();
+        
+        fm.guardarEmpleado(as1);
+        fm.guardarEmpleado(cm1);
+        fm.guardarEmpleado(ph1);
+        fm.guardarEmpleado(tmp1);
+        fm.guardarPracticante(pr1);
     }   
 }
