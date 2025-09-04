@@ -8,20 +8,44 @@ public class Comisionista extends Empleado {
 
     private double ventasQuincena;
 
-    public Comisionista(String cedula, String nombre, double salarioXquincena, Incentivo incentivo) {
-        super(cedula, nombre, salarioXquincena, incentivo);
+    public Comisionista(String cedula, String nombre, Incentivo incentivo, Integer aniosServicio, double base, double porcentaje, double ventasQuincena) {
+        super(cedula, nombre, incentivo,aniosServicio);
+        this.base = base;
+        this.porcentaje = porcentaje;
+        this.ventasQuincena = ventasQuincena;
     }
 
     public double salarioQuicena() {
-        return 0.0;
+        return base + (porcentaje/ventasQuincena);
     }
 
     public String toCSV() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return "COMISIONISTA;" + getCedula() + ";" + getNombre() + ";" + getBase() + ";" + getPorcentaje()+";"+ getVentasQuincena();
     }
 
-    @Override
-    public double bono() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public double getBase() {
+        return base;
     }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+    public double getPorcentaje() {
+        return porcentaje;
+    }
+
+    public void setPorcentaje(double porcentaje) {
+        this.porcentaje = porcentaje;
+    }
+
+    public double getVentasQuincena() {
+        return ventasQuincena;
+    }
+
+    public void setVentasQuincena(double ventasQuincena) {
+        this.ventasQuincena = ventasQuincena;
+    }
+    
+    
 }

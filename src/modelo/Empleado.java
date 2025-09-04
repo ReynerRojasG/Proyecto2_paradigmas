@@ -10,13 +10,23 @@ public abstract class Empleado implements Bonificable {
 
     private Incentivo incentivo;
     
-        public Empleado(String cedula, String nombre, double salarioXquincena, Incentivo incentivo) {
+    private Integer aniosServicio; 
+    
+    public Empleado(String cedula, String nombre, Incentivo incentivo, Integer aniosServicio) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.incentivo = incentivo;
+        this.aniosServicio = aniosServicio;
+    }
+    
+    public Empleado(String cedula, String nombre, double salarioXquincena, Integer aniosServicio) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.salarioXquincena = salarioXquincena;
-        this.incentivo = incentivo;
+        this.incentivo = null;
+        this.aniosServicio = aniosServicio;
     }
-
+    
     public abstract double salarioQuicena();
 
     public abstract String toCSV();      
@@ -40,7 +50,19 @@ public abstract class Empleado implements Bonificable {
     public Incentivo getIncentivo() {
         return incentivo;
     }
+
+    public Integer getAniosServicio() {
+        return aniosServicio;
+    }
+
+    public void setAniosServicio(Integer aniosServicio) {
+        this.aniosServicio = aniosServicio;
+    }
     
+    @Override
+    public double bono(){
+        return incentivo.calcularBono(this);
+    }   
     
 
 }

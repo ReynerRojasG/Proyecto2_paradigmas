@@ -2,5 +2,5 @@ package modelo;
 
 public interface Incentivo {
 
-    public Empleado calcularBono(Empleado empleado);
+    public double calcularBono(Empleado empleado);
 }

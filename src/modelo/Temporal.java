@@ -6,20 +6,35 @@ public class Temporal extends Empleado {
 
     private int diasActivos;
 
-    public Temporal(String cedula, String nombre, double salarioXquincena, Incentivo incentivo) {
-        super(cedula, nombre, salarioXquincena, incentivo);
+    public Temporal(String cedula, String nombre, Incentivo incentivo, Integer aniosServicio, double tarifaDiaria, int diasActivos) {
+        super(cedula, nombre, incentivo,aniosServicio);
+        this.tarifaDiaria = tarifaDiaria;
+        this.diasActivos =diasActivos;
     }
 
     public double salarioQuicena() {
-        return 0.0;
+        return diasActivos*tarifaDiaria;
     }
 
     public String toCSV() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return "TEMPORAL;" + getCedula() + ";" + getNombre() + ";" + getTarifaDiaria() + ";" + getDiasActivos();
     }
 
-    @Override
-    public double bono() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public double getTarifaDiaria() {
+        return tarifaDiaria;
     }
+
+    public void setTarifaDiaria(double tarifaDiaria) {
+        this.tarifaDiaria = tarifaDiaria;
+    }
+
+    public int getDiasActivos() {
+        return diasActivos;
+    }
+
+    public void setDiasActivos(int diasActivos) {
+        this.diasActivos = diasActivos;
+    }
+    
+    
 }

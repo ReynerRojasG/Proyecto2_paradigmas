@@ -2,7 +2,8 @@ package modelo;
 
 public class IncentivoAntiguedad implements Incentivo {
 
-    public Empleado calcularBono(Empleado empleado) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public double calcularBono(Empleado empleado) {
+        return empleado.getAniosServicio() * 100;
+        
     }
 }

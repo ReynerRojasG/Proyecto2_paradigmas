@@ -4,8 +4,8 @@ public class Asalariado extends Empleado {
 
     private double salarioMensual;
 
-    public Asalariado(String cedula, String nombre, double salarioMensual, Incentivo incentivo) {
-        super(cedula, nombre, 0.0, incentivo);
+    public Asalariado(String cedula, String nombre, double salarioMensual, Incentivo incentivo, Integer aniosServicio) {
+        super(cedula, nombre, incentivo,aniosServicio);
         this.salarioMensual = salarioMensual;
     }
     
@@ -23,11 +23,6 @@ public class Asalariado extends Empleado {
      
     @Override
     public String toCSV() {
-        return getCedula() + ";" + getNombre() + ";" + salarioMensual + ";" + salarioQuicena();
-    }
-
-    @Override
-    public double bono() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "ASALARIADO;" + getCedula() + ";" + getNombre() + ";" + salarioMensual + ";" + salarioQuicena();
     }
 }

@@ -2,7 +2,7 @@ package modelo;
 
 public class IncentivoDesempeno implements Incentivo {
 
-    public Empleado calcularBono(Empleado empleado) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public double calcularBono(Empleado empleado) {
+        return empleado.getSalarioXquincena()* 0.15;
     }
 }

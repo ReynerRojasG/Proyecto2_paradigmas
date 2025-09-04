@@ -6,20 +6,35 @@ public class PorHora extends Empleado {
 
     private double horasQuincena;
 
-    public PorHora(String cedula, String nombre, double salarioXquincena, Incentivo incentivo) {
-        super(cedula, nombre, salarioXquincena, incentivo);
+    public PorHora(String cedula, String nombre, Incentivo incentivo, Integer aniosServicio, double tarifaHora, double horasQuincena) {
+        super(cedula, nombre, incentivo, aniosServicio);
+        this.tarifaHora = tarifaHora;
+        this.horasQuincena = horasQuincena;
     }
 
     public double salarioQuicena() {
-        return 0.0;
+        return tarifaHora * horasQuincena;
     }
 
     public String toCSV() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return "PORHORA;" + getCedula() + ";" + getNombre() + ";" + getTarifaHora() + ";" + getHorasQuincena();
     }
 
-    @Override
-    public double bono() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public double getTarifaHora() {
+        return tarifaHora;
     }
+
+    public void setTarifaHora(double tarifaHora) {
+        this.tarifaHora = tarifaHora;
+    }
+
+    public double getHorasQuincena() {
+        return horasQuincena;
+    }
+
+    public void setHorasQuincena(double horasQuincena) {
+        this.horasQuincena = horasQuincena;
+    }
+    
+    
 }
