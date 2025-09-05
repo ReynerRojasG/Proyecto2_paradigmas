@@ -29,7 +29,7 @@ public class Proyecto2 {
         fm.guardarPracticante(pr1);
         
         ArrayList<Empleado> empleados = fm.getEmpleados();
-        Planilla planilla = new Planilla(empleados);
-        planilla.calcularPagos();
+        Planilla planilla = new Planilla();
+        planilla.pago(empleados);
     }   
 }
