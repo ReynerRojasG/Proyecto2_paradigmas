@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: Test.TemporalTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.051 s <<< FAILURE! -- in Test.TemporalTest
+Test.TemporalTest.testToCSV -- Time elapsed: 0.031 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: El formato CSV no coincide con el esperado ==> expected: <TEMPORAL;208760456;Laura Jimenez;1500.0;5> but was: <TEMPORAL;208760456;Laura Jimenez;1500.0;5;3>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+	at Test.TemporalTest.testToCSV(TemporalTest.java:51)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

@@ -1,0 +1,34 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4 sep. 2025, 20:29:06
+    Author     : Alvaro Artavia
+*/
+
+.custom-button {
+    -fx-background-color: #1E1E1E;
+}
+/* Hover: mouse sobre el botón */
+.custom-button:hover {
+    -fx-background-color: #9D4EDD33; /* morado opaco */
+}
+
+/* Presionado / click */
+.custom-button:pressed {
+    -fx-background-color: #9D4EDD66; /* morado más intenso */
+}
+
+.custom-button-red {
+    -fx-background-color: #1E1E1E;
+}
+/* Hover: mouse sobre el botón */
+.custom-button-red:hover {
+    -fx-background-color: #EF476F33; /* rojo opaco ~20% */
+}
+
+/* Presionado / click */
+.custom-button-red:pressed {
+    -fx-background-color: #EF476F66; /* rojo más intenso ~40% */
+}

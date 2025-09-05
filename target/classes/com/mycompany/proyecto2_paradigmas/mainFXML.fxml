@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="754.0" prefWidth="1263.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2_paradigmas.MainFXMLController">
+   <children>
+      <AnchorPane layoutX="25.0" layoutY="29.0" prefHeight="64.0" prefWidth="1221.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 50;">
+         <children>
+            <Label layoutX="14.0" layoutY="18.0" text="Sistema de RRHH" textFill="#e0e0e0">
+               <font>
+                  <Font name="Tw Cen MT" size="25.0" />
+               </font>
+            </Label>
+            <Separator layoutX="194.0" layoutY="9.0" opacity="0.32" orientation="VERTICAL" prefHeight="46.0" prefWidth="0.0" />
+            <HBox layoutX="969.0" layoutY="5.0" prefHeight="54.0" prefWidth="238.0" style="-fx-padding: 10; -fx-spacing: 20;">
+               <children>
+                  <Button fx:id="btn_sec_empleados" mnemonicParsing="false" onAction="#ChangeToEmpleados" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #9D4EDD;" styleClass="custom-button" stylesheets="@Bttons.css" text="Empleados" textFill="#bfbfbf">
+                     <font>
+                        <Font name="Trebuchet MS" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_sec_planillas" mnemonicParsing="false" onAction="#ChangeToPlanillas" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #7B2CBF;" styleClass="custom-button" stylesheets="@Bttons.css" text="Planillas" textFill="#bfbfbf">
+                     <font>
+                        <Font name="Trebuchet MS" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <TabPane fx:id="tp_secciones" layoutX="47.0" layoutY="103.0" prefHeight="626.0" prefWidth="1174.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Empleados">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="594.0" prefWidth="1174.0">
+                     <children>
+                        <AnchorPane layoutY="7.0" prefHeight="582.0" prefWidth="554.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 5;">
+                           <children>
+                              <Label layoutX="8.0" layoutY="14.0" text="Nuevo Empleado:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tw Cen MT" size="34.0" />
+                                 </font>
+                              </Label>
+                              <VBox layoutX="8.0" layoutY="58.0" prefHeight="518.0" prefWidth="538.0" style="-fx-spacing: 5;">
+                                 <children>
+                                    <Label text="Tipo:" textFill="#e0e0e0">
+                                       <font>
+                                          <Font name="Tw Cen MT" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="531.0" style="-fx-spacing: 10;">
+                                       <children>
+                                          <RadioButton fx:id="rdb_asalariado" mnemonicParsing="false" onAction="#enableAsalariadoInfo" selected="true" stylesheets="@Rdbtton.css" text="Asalariado">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="tg_tipo" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="rdb_porHoras" mnemonicParsing="false" onAction="#enablePorHorasInfo" stylesheets="@Rdbtton.css" text="PorHoras" toggleGroup="$tg_tipo" />
+                                          <RadioButton fx:id="rdb__temporal" mnemonicParsing="false" onAction="#enableTemporalInfo" stylesheets="@Rdbtton.css" text="Temporal" toggleGroup="$tg_tipo" />
+                                          <RadioButton fx:id="rdb_comisionista" mnemonicParsing="false" onAction="#enableComisionistaInfo" stylesheets="@Rdbtton.css" text="Comisionista" toggleGroup="$tg_tipo" />
+                                          <RadioButton fx:id="rdb_practicante" mnemonicParsing="false" onAction="#enablePracticanteInfo" stylesheets="@Rdbtton.css" text="Practicante" toggleGroup="$tg_tipo" />
+                                       </children>
+                                    </HBox>
+                                    <Separator opacity="0.25" prefWidth="200.0" />
+                                    <Label text="Infromación personal:" textFill="#e0e0e0">
+                                       <font>
+                                          <Font name="Tw Cen MT" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="531.0" style="-fx-spacing: 10;">
+                                       <children>
+                                          <Label text="Cedula:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_cedula" prefHeight="27.0" prefWidth="131.0" promptText="Cedula" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                          <Label text="Nombre:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_nombre" prefHeight="27.0" prefWidth="235.0" promptText="Nombre" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                       </children>
+                                    </HBox>
+                                    <Separator opacity="0.25" prefWidth="200.0" />
+                                    <Label text="Información adicional:" textFill="#e0e0e0">
+                                       <font>
+                                          <Font name="Tw Cen MT" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" prefHeight="46.0" prefWidth="531.0" style="-fx-spacing: 10;">
+                                       <children>
+                                          <Label fx:id="lbl_salarioMensual" text="Salario mensual:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_salarioMensual" prefHeight="27.0" prefWidth="103.0" promptText="0.0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                          <Label fx:id="lbl_tarifaHora" disable="true" text="Tarifa hora:  " textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_tarifaHora" disable="true" prefHeight="27.0" prefWidth="120.0" promptText="0.0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="46.0" prefWidth="531.0" style="-fx-spacing: 10;">
+                                       <children>
+                                          <Label fx:id="lbl_HorasQuincena" disable="true" text="Horas quincena:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_horasQuincena" disable="true" prefHeight="27.0" prefWidth="105.0" promptText="0.0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                          <Label fx:id="lbl_tarifaDiaria" disable="true" text="Tarifa diaria:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_tarifaDiaria" disable="true" prefHeight="27.0" prefWidth="120.0" promptText="0.0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="46.0" prefWidth="531.0" style="-fx-spacing: 10;">
+                                       <children>
+                                          <Label fx:id="lbl_VentasQuincena" disable="true" text="Ventas quincena:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_ventasQuincena" disable="true" prefHeight="27.0" prefWidth="99.0" promptText="0.0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                          <Label fx:id="lbl_apoyoQuincena" disable="true" text="Apoyo quincena:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_apoyoQuincena" disable="true" prefHeight="27.0" prefWidth="97.0" promptText="0.0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="46.0" prefWidth="531.0" style="-fx-spacing: 10;">
+                                       <children>
+                                          <Label fx:id="lbl_DiasActivos" disable="true" text="Dias activo:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_diasActivos" alignment="CENTER" disable="true" prefHeight="27.0" prefWidth="47.0" promptText="0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                          <Label fx:id="lbl_base" disable="true" text="Base:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_base" disable="true" prefHeight="27.0" prefWidth="84.0" promptText="0.0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                          <Label fx:id="lbl_porcentaje" disable="true" text="Porcentaje:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_porcentaje" disable="true" prefHeight="27.0" prefWidth="84.0" promptText="0.0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                       </children>
+                                    </HBox>
+                                    <Separator opacity="0.25" prefHeight="43.0" prefWidth="538.0" />
+                                    <HBox alignment="CENTER" prefHeight="46.0" prefWidth="531.0" style="-fx-spacing: 10;">
+                                       <children>
+                                          <Button fx:id="btn_cancelEmpleado" mnemonicParsing="false" onAction="#CancelEmpleado" prefHeight="34.0" prefWidth="135.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #EF476F;" styleClass="custom-button-red" stylesheets="@Bttons.css" text="Cancelar" textFill="#bfbfbf">
+                                             <font>
+                                                <Font name="Trebuchet MS" size="17.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btn_saveEmpleado1" mnemonicParsing="false" onAction="#SaveEmpleado" prefHeight="34.0" prefWidth="421.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #9D4EDD;" styleClass="custom-button" stylesheets="@Bttons.css" text="Agregar" textFill="#bfbfbf">
+                                             <font>
+                                                <Font name="Trebuchet MS" size="17.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                        <AnchorPane layoutX="606.0" layoutY="8.0" prefHeight="582.0" prefWidth="554.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 5;">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="Empleados Registrados:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tw Cen MT" size="34.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane hbarPolicy="NEVER" layoutX="17.0" layoutY="69.0" prefHeight="498.0" prefWidth="528.0" vbarPolicy="ALWAYS">
+                                <content>
+                                    <VBox prefHeight="503.0" prefWidth="526.0" style="-fx-background-color: #1A1A1A;" />
+                                </content>
+                              </ScrollPane>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Planillas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
