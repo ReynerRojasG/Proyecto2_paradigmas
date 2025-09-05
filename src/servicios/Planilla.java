@@ -1,9 +1,8 @@
 package servicios;
 
-
 import modelo.Empleado;
 import java.util.ArrayList;
-
+//Clase para el pago final
 public class Planilla {
 
     public ArrayList<Empleado> pago(ArrayList<Empleado> empleados) {

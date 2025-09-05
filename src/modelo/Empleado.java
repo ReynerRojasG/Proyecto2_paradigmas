@@ -1,5 +1,5 @@
 package modelo;
-
+//Clase padre Empleado
 public abstract class Empleado implements Bonificable {
 
     private String cedula;
@@ -26,15 +26,11 @@ public abstract class Empleado implements Bonificable {
         this.incentivo = null;
         this.aniosServicio = aniosServicio;
     }
-    
+    //Función que hereda en las subclases y calcula un salario quincenal diferente
     public abstract double salarioQuicena();
 
     public abstract String toCSV();      
     
-    public void setIncentivo(Incentivo incentivo) {
-        this.incentivo = incentivo;
-    }
-
     public String getCedula() {
         return cedula;
     }
@@ -58,7 +54,10 @@ public abstract class Empleado implements Bonificable {
     public void setSalarioXquincena(double salario) {
         this.salarioXquincena = salario;
     }
-
+    
+    public void setIncentivo(Incentivo incentivo) {
+        this.incentivo = incentivo;
+    }
 
     public void setAniosServicio(Integer aniosServicio) {
         this.aniosServicio = aniosServicio;
@@ -68,8 +67,4 @@ public abstract class Empleado implements Bonificable {
     public double bono(){
         return incentivo.calcularBono(this);
     }   
-
-    public double pagoFinal() {
-        return salarioQuicena() + bono();
-    }
 }

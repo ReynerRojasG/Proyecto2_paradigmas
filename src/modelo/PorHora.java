@@ -1,5 +1,5 @@
 package modelo;
-
+//Subclase para empleados por hora
 public class PorHora extends Empleado {
 
     private double tarifaHora;
@@ -11,11 +11,11 @@ public class PorHora extends Empleado {
         this.tarifaHora = tarifaHora;
         this.horasQuincena = horasQuincena;
     }
-
+    //Calcular salario quincenal para un empleado por hora
     public double salarioQuicena() {
         return tarifaHora * horasQuincena;
     }
-
+    //Retornar To string para guardar en el archivo CSV
     public String toCSV() {
         return "PORHORA;" + getCedula() + ";" + getNombre() + ";" + getTarifaHora() + ";" + getHorasQuincena();
     }
@@ -24,17 +24,15 @@ public class PorHora extends Empleado {
         return tarifaHora;
     }
 
-    public void setTarifaHora(double tarifaHora) {
-        this.tarifaHora = tarifaHora;
-    }
-
     public double getHorasQuincena() {
         return horasQuincena;
     }
 
-    public void setHorasQuincena(double horasQuincena) {
-        this.horasQuincena = horasQuincena;
+    public void setTarifaHora(double tarifaHora) {
+        this.tarifaHora = tarifaHora;
     }
     
-    
+    public void setHorasQuincena(double horasQuincena) {
+        this.horasQuincena = horasQuincena;
+    }  
 }

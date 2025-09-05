@@ -46,6 +46,4 @@ public class Comisionista extends Empleado {
     public void setVentasQuincena(double ventasQuincena) {
         this.ventasQuincena = ventasQuincena;
     }
-    
-    
 }

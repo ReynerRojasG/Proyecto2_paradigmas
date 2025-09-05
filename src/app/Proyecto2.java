@@ -31,5 +31,6 @@ public class Proyecto2 {
         ArrayList<Empleado> empleados = fm.getEmpleados();
         Planilla planilla = new Planilla();
         planilla.pago(empleados);
+        fm.guardarPlanilla(empleados);
     }   
 }

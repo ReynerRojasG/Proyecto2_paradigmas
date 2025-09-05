@@ -1,5 +1,5 @@
 package modelo;
-
+//Subclase para empleados temporales
 public class Temporal extends Empleado {
 
     private double tarifaDiaria;
@@ -11,11 +11,11 @@ public class Temporal extends Empleado {
         this.tarifaDiaria = tarifaDiaria;
         this.diasActivos =diasActivos;
     }
-
+    //Calcular salario quincenal para un empleado temporal
     public double salarioQuicena() {
-        return diasActivos*tarifaDiaria;
+        return diasActivos * tarifaDiaria;
     }
-
+    //Retornar To string para guardar en el archivo CSV
     public String toCSV() {
         return "TEMPORAL;" + getCedula() + ";" + getNombre() + ";" + getTarifaDiaria() + ";" + getDiasActivos()+ ";" + getAniosServicio();
     }
@@ -24,12 +24,12 @@ public class Temporal extends Empleado {
         return tarifaDiaria;
     }
 
-    public void setTarifaDiaria(double tarifaDiaria) {
-        this.tarifaDiaria = tarifaDiaria;
-    }
-
     public int getDiasActivos() {
         return diasActivos;
+    }
+
+    public void setTarifaDiaria(double tarifaDiaria) {
+        this.tarifaDiaria = tarifaDiaria;
     }
 
     public void setDiasActivos(int diasActivos) {

@@ -1,5 +1,5 @@
 package modelo;
-
+//Subclase para empleados asalariados
     public class Asalariado extends Empleado {
 
         private double salarioMensual;
@@ -8,7 +8,7 @@ package modelo;
             super(cedula, nombre, incentivo,aniosServicio);
             this.salarioMensual = salarioMensual;
         }
-
+        //Calcular salario quincenal para un asalariado
         public double salarioQuicena() {
             if (salarioMensual > 0){
                 return salarioMensual/2;
@@ -20,7 +20,7 @@ package modelo;
         public double getSalarioMensual() {
             return salarioMensual;
         }
-
+        //Retornar To string para guardar en el archivo CSV
         @Override
         public String toCSV() {
             return "ASALARIADO;" + getCedula() + ";" + getNombre() + ";" + salarioMensual + ";" + salarioQuicena() + ";" + getAniosServicio();

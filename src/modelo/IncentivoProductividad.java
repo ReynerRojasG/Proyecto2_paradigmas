@@ -1,5 +1,5 @@
 package modelo;
-
+//Calcular incentivo por productividad
 public class IncentivoProductividad implements Incentivo {
 
     @Override

@@ -1,11 +1,14 @@
 package infra;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import modelo.Empleado;
 import modelo.Practicante;
-
 import modelo.Asalariado;
 import modelo.Comisionista;
 import modelo.PorHora;
@@ -13,14 +16,13 @@ import modelo.Temporal;
 import modelo.IncentivoAntiguedad;
 import modelo.IncentivoDesempeno;
 import modelo.IncentivoProductividad;
-
 import modelo.Bonificable;
 
 public class FileManager {
 
     private final String route = "data/empleados.csv";
     private Integer fileStatus;
-
+    //Crear la carpeta data
     public FileManager() {
         File folder = new File("data");
         if (!folder.exists()) {
@@ -28,12 +30,12 @@ public class FileManager {
             System.out.println("Carpeta 'data' creada.");
         }
     }
-
+    // Elimina el BOM de UTF-8 si existe
     private static String stripBOM(String s) {
         if (s != null && !s.isEmpty() && s.charAt(0) == '\uFEFF') return s.substring(1);
         return s;
     }
-
+    // Verifica si ya existe un empleado en el archivo por su cedula
     private boolean existeCedulaEnArchivo(String cedula) {
         File file = new File(route);
         if (!file.exists()) return false;
@@ -52,17 +54,16 @@ public class FileManager {
         }
         return false;
     }
-
+    // Verificar si un empleado existe
     public boolean existeEmpleado(String cedula) {
         return existeCedulaEnArchivo(cedula);
     }
-
+    // Asegura que la carpeta out exista para exportar archivos
     private static void ensureOutFolder() {
         File out = new File("out");
         if (!out.exists()) out.mkdirs();
     }
-
-
+    // Guarda un empleado en el CSV
     public void guardarEmpleado(Empleado emp) {
         try {
             if (existeCedulaEnArchivo(emp.getCedula())) {
@@ -80,7 +81,7 @@ public class FileManager {
             e.printStackTrace();
         }
     }
-
+    // Guarda un practicantes en el CSV
     public void guardarPracticante(Practicante prc) {
         try {
             if (existeCedulaEnArchivo(prc.getCedula())) {
@@ -98,7 +99,7 @@ public class FileManager {
             e.printStackTrace();
         }
     }
-
+    // Lee todos los empleados del archivo CSV y los devuelve en una lista
     public ArrayList<Empleado> getEmpleados() {
         ArrayList<Empleado> empleados = new ArrayList<>();
         File file = new File(route);
@@ -168,7 +169,7 @@ public class FileManager {
         }
         return empleados;
     }
-
+    // Lee todos los practicantes del archivo CSV
     public ArrayList<Practicante> getPracticantes() {
         ArrayList<Practicante> practicantes = new ArrayList<>();
         File file = new File(route);
@@ -198,7 +199,7 @@ public class FileManager {
         }
         return practicantes;
     }
-
+    // Guarda la planilla de pagos de todos los empleados en un CSV
     public void guardarPlanilla(ArrayList<Empleado> empleados) {
         ensureOutFolder();
         String salida = "out/planilla_quincena.csv";
