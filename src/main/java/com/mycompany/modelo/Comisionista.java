@@ -9,18 +9,25 @@ public class Comisionista extends Empleado {
     private double ventasQuincena;
 
     public Comisionista(String cedula, String nombre, Incentivo incentivo, Integer aniosServicio, double base, double porcentaje, double ventasQuincena) {
-        super(cedula, nombre, incentivo,aniosServicio);
+        super(cedula, nombre, incentivo, aniosServicio);
+        this.base = base;
+        this.porcentaje = porcentaje;
+        this.ventasQuincena = ventasQuincena;
+    }
+
+    public Comisionista(String cedula, String nombre, Integer aniosServicio, double base, double porcentaje, double ventasQuincena) {
+        super(cedula, nombre, null, aniosServicio);
         this.base = base;
         this.porcentaje = porcentaje;
         this.ventasQuincena = ventasQuincena;
     }
 
     public double salarioQuicena() {
-        return base + (porcentaje/ventasQuincena);
+        return base + (porcentaje / ventasQuincena);
     }
 
     public String toCSV() {
-        return "COMISIONISTA;" + getCedula() + ";" + getNombre() + ";" + getBase() + ";" + getPorcentaje()+";"+ getVentasQuincena();
+        return "COMISIONISTA;" + getCedula() + ";" + getNombre() + ";" + getBase() + ";" + getPorcentaje() + ";" + getVentasQuincena();
     }
 
     public double getBase() {

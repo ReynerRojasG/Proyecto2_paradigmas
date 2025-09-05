@@ -8,6 +8,10 @@ package modelo;
             super(cedula, nombre, incentivo,aniosServicio);
             this.salarioMensual = salarioMensual;
         }
+        public Asalariado(String cedula, String nombre, double salarioMensual, Integer aniosServicio) {
+            super(cedula, nombre, null,aniosServicio);
+            this.salarioMensual = salarioMensual;
+        }
         //Calcular salario quincenal para un asalariado
         public double salarioQuicena() {
             if (salarioMensual > 0){

@@ -12,6 +12,13 @@ public abstract class Empleado implements Bonificable {
     
     private Integer aniosServicio; 
     
+    public Empleado(){
+        cedula = "";
+        nombre = "";
+        salarioXquincena = 0;
+        incentivo = null;
+        aniosServicio = 0;
+    }
     public Empleado(String cedula, String nombre, Incentivo incentivo, Integer aniosServicio) {
         this.cedula = cedula;
         this.nombre = nombre;

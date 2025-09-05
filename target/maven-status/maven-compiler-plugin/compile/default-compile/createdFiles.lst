@@ -3,6 +3,7 @@ modelo\IncentivoProductividad.class
 com\mycompany\proyecto2_paradigmas\App.class
 modelo\Bonificable.class
 modelo\PorHora.class
+com\mycompany\proyecto2_paradigmas\CardPane.class
 modelo\Empleado.class
 com\mycompany\infra\FileManager.class
 modelo\Practicante.class
@@ -12,4 +13,5 @@ modelo\Incentivo.class
 modelo\IncentivoAntiguedad.class
 modelo\Comisionista.class
 modelo\Temporal.class
+com\mycompany\proyecto2_paradigmas\UI_ComponentsFactory.class
 modelo\Asalariado.class

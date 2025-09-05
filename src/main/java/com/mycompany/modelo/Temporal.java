@@ -6,8 +6,17 @@ public class Temporal extends Empleado {
 
     private int diasActivos;
 
+    public Temporal(){
+    tarifaDiaria = 0;
+    diasActivos = diasActivos;
+    }
     public Temporal(String cedula, String nombre, Incentivo incentivo, Integer aniosServicio, double tarifaDiaria, int diasActivos) {
         super(cedula, nombre, incentivo,aniosServicio);
+        this.tarifaDiaria = tarifaDiaria;
+        this.diasActivos =diasActivos;
+    }
+        public Temporal(String cedula, String nombre, Integer aniosServicio, double tarifaDiaria, int diasActivos) {
+        super(cedula, nombre, null,aniosServicio);
         this.tarifaDiaria = tarifaDiaria;
         this.diasActivos =diasActivos;
     }

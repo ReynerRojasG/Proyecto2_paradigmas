@@ -13,6 +13,11 @@ public class Practicante {
         this.cedula = cedula;
         this.nombre = nombre;
     }
+        public Practicante( ) {
+        this.apoyoQuincena = 0;
+        this.cedula = "";
+        this.nombre = "";
+    }
     //Retornar To string para guardar en el archivo CSV
     public String toCSV() {
         return "PRACTICANTE;" + getCedula() + ";" + getNombre() + ";" + getApoyoQuincena();

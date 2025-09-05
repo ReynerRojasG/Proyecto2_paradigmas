@@ -17,40 +17,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="754.0" prefWidth="1263.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2_paradigmas.MainFXMLController">
    <children>
-      <AnchorPane layoutX="25.0" layoutY="29.0" prefHeight="64.0" prefWidth="1221.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 50;">
-         <children>
-            <Label layoutX="14.0" layoutY="18.0" text="Sistema de RRHH" textFill="#e0e0e0">
-               <font>
-                  <Font name="Tw Cen MT" size="25.0" />
-               </font>
-            </Label>
-            <Separator layoutX="194.0" layoutY="9.0" opacity="0.32" orientation="VERTICAL" prefHeight="46.0" prefWidth="0.0" />
-            <HBox layoutX="969.0" layoutY="5.0" prefHeight="54.0" prefWidth="238.0" style="-fx-padding: 10; -fx-spacing: 20;">
-               <children>
-                  <Button fx:id="btn_sec_empleados" mnemonicParsing="false" onAction="#ChangeToEmpleados" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #9D4EDD;" styleClass="custom-button" stylesheets="@Bttons.css" text="Empleados" textFill="#bfbfbf">
-                     <font>
-                        <Font name="Trebuchet MS" size="17.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn_sec_planillas" mnemonicParsing="false" onAction="#ChangeToPlanillas" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #7B2CBF;" styleClass="custom-button" stylesheets="@Bttons.css" text="Planillas" textFill="#bfbfbf">
-                     <font>
-                        <Font name="Trebuchet MS" size="17.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-         </children>
-         <effect>
-            <DropShadow />
-         </effect>
-      </AnchorPane>
-      <TabPane fx:id="tp_secciones" layoutX="47.0" layoutY="103.0" prefHeight="626.0" prefWidth="1174.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tp_secciones" layoutX="47.0" layoutY="57.0" prefHeight="672.0" prefWidth="1174.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Empleados">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="594.0" prefWidth="1174.0">
                      <children>
-                        <AnchorPane layoutY="7.0" prefHeight="582.0" prefWidth="554.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 5;">
+                        <AnchorPane layoutX="7.0" layoutY="22.0" prefHeight="582.0" prefWidth="554.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 5;">
                            <children>
                               <Label layoutX="8.0" layoutY="14.0" text="Nuevo Empleado:" textFill="WHITE">
                                  <font>
@@ -96,7 +69,17 @@
                                                 <Font name="Tw Cen MT" size="18.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="tf_nombre" prefHeight="27.0" prefWidth="235.0" promptText="Nombre" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                          <TextField fx:id="tf_nombre" prefHeight="27.0" prefWidth="255.0" promptText="Nombre" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="531.0" style="-fx-spacing: 10;">
+                                       <children>
+                                          <Label text="Años Activo:" textFill="#e0e0e0">
+                                             <font>
+                                                <Font name="Tw Cen MT" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tf_anios" alignment="CENTER" prefHeight="27.0" prefWidth="80.0" promptText="0" style="-fx-background-color: #202020; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #9D4EDD; -fx-text-fill: white;" />
                                        </children>
                                     </HBox>
                                     <Separator opacity="0.25" prefWidth="200.0" />
@@ -197,7 +180,7 @@
                               <DropShadow />
                            </effect>
                         </AnchorPane>
-                        <AnchorPane layoutX="606.0" layoutY="8.0" prefHeight="582.0" prefWidth="554.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 5;">
+                        <AnchorPane layoutX="613.0" layoutY="23.0" prefHeight="582.0" prefWidth="554.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 5;">
                            <children>
                               <Label layoutX="14.0" layoutY="14.0" text="Empleados Registrados:" textFill="WHITE">
                                  <font>
@@ -206,7 +189,7 @@
                               </Label>
                               <ScrollPane hbarPolicy="NEVER" layoutX="17.0" layoutY="69.0" prefHeight="498.0" prefWidth="528.0" vbarPolicy="ALWAYS">
                                 <content>
-                                    <VBox prefHeight="503.0" prefWidth="526.0" style="-fx-background-color: #1A1A1A;" />
+                                    <VBox fx:id="vb_EmpleadosList" prefHeight="503.0" prefWidth="515.0" style="-fx-background-color: #1A1A1A; -fx-spacing: 5; -fx-padding: 10;" />
                                 </content>
                               </ScrollPane>
                            </children>
@@ -220,10 +203,61 @@
           </Tab>
           <Tab text="Planillas">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn_reportarPlanilla" layoutX="8.0" layoutY="42.0" mnemonicParsing="false" onAction="#ReportarPlanilla" prefHeight="46.0" prefWidth="1130.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #9D4EDD;" styleClass="custom-button" stylesheets="@Bttons.css" text="Hacer Planilla" textFill="#bfbfbf">
+                           <font>
+                              <Font name="Trebuchet MS" size="17.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane layoutX="31.0" layoutY="100.0" prefHeight="502.0" prefWidth="1108.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 5;">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="Reporte de planilla:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tw Cen MT" size="34.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane hbarPolicy="NEVER" layoutX="13.0" layoutY="58.0" prefHeight="395.0" prefWidth="1084.0" vbarPolicy="ALWAYS">
+                                 <content>
+                                    <VBox fx:id="vb_PlanillaList" prefHeight="413.0" prefWidth="1074.0" style="-fx-background-color: #1A1A1A; -fx-spacing: 5; -fx-padding: 10;" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                     </children></AnchorPane>
             </content>
           </Tab>
         </tabs>
       </TabPane>
+      <AnchorPane layoutX="25.0" layoutY="29.0" prefHeight="64.0" prefWidth="1221.0" style="-fx-background-color: #1A1A1A; -fx-background-radius: 50;">
+         <children>
+            <Label layoutX="14.0" layoutY="18.0" text="Sistema de RRHH" textFill="#e0e0e0">
+               <font>
+                  <Font name="Tw Cen MT" size="25.0" />
+               </font>
+            </Label>
+            <Separator layoutX="194.0" layoutY="9.0" opacity="0.32" orientation="VERTICAL" prefHeight="46.0" prefWidth="0.0" />
+            <HBox layoutX="969.0" layoutY="5.0" prefHeight="54.0" prefWidth="238.0" style="-fx-padding: 10; -fx-spacing: 20;">
+               <children>
+                  <Button fx:id="btn_sec_empleados" mnemonicParsing="false" onAction="#ChangeToEmpleados" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #9D4EDD;" styleClass="custom-button" stylesheets="@Bttons.css" text="Empleados" textFill="#bfbfbf">
+                     <font>
+                        <Font name="Trebuchet MS" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_sec_planillas" mnemonicParsing="false" onAction="#ChangeToPlanillas" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #7B2CBF;" styleClass="custom-button" stylesheets="@Bttons.css" text="Planillas" textFill="#bfbfbf">
+                     <font>
+                        <Font name="Trebuchet MS" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
    </children>
 </AnchorPane>
