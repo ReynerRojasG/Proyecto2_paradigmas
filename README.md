@@ -69,4 +69,6 @@ El sistema calcula la planilla quincenal de distintos tipos de empleados y aplic
 ### Test de JUnit5
 ![Resultados de Ejecución](https://github.com/user-attachments/assets/95b459d8-dc96-4e5a-866a-172521b1d7ad)
 ### Interfaz gráfica
-![GUI](https://github.com/user-attachments/assets/95b459d8-dc96-4e5a-866a-172521b1d7ad) 
+![GUI](https://github.com/user-attachments/assets/93653c6c-ca45-4335-bebb-876a14bcc865) 
+![GUI2](https://github.com/user-attachments/assets/c30cc3a2-6bfc-4502-9de2-bf48aef586cf) 
+
