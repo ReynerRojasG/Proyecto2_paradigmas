@@ -63,6 +63,10 @@ public abstract class Empleado implements Bonificable {
     public double bono(){
         return incentivo.calcularBono(this);
     }   
+
+    public double pagoFinal() {
+        return salarioQuicena() + bono();
+    }
     
 
 }
