@@ -8,6 +8,7 @@ public class Planilla {
 
     public ArrayList<Empleado> pago(ArrayList<Empleado> empleados) {
         for (Empleado e : empleados) {
+            e.setSalarioXquincena(e.salarioQuicena());
             double salario = e.salarioQuicena();
             double bono = e.bono();
             double total = salario + bono;

@@ -54,6 +54,11 @@ public abstract class Empleado implements Bonificable {
     public Integer getAniosServicio() {
         return aniosServicio;
     }
+    
+    public void setSalarioXquincena(double salario) {
+        this.salarioXquincena = salario;
+    }
+
 
     public void setAniosServicio(Integer aniosServicio) {
         this.aniosServicio = aniosServicio;
