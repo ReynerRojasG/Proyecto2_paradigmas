@@ -17,7 +17,7 @@ public class Temporal extends Empleado {
     }
 
     public String toCSV() {
-        return "TEMPORAL;" + getCedula() + ";" + getNombre() + ";" + getTarifaDiaria() + ";" + getDiasActivos();
+        return "TEMPORAL;" + getCedula() + ";" + getNombre() + ";" + getTarifaDiaria() + ";" + getDiasActivos()+ ";" + getAniosServicio();
     }
 
     public double getTarifaDiaria() {

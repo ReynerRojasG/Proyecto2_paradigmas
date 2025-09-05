@@ -117,8 +117,9 @@ public class FileManager {
                             String cedula = p[1].trim();
                             String nombre = p[2].trim();
                             double salarioMensual = Double.parseDouble(p[3].trim());
+                            int aniosServicio = Integer.parseInt(p[5].trim());
                             empleados.add(new Asalariado(cedula, nombre, salarioMensual,
-                                    new IncentivoAntiguedad(), 0));
+                                    new IncentivoAntiguedad(), aniosServicio));
                             break;
                         }                        
                         case "PORHORA": {
@@ -135,8 +136,9 @@ public class FileManager {
                             String nombre = p[2].trim();
                             double tarifaDiaria = Double.parseDouble(p[3].trim());
                             int diasActivos = Integer.parseInt(p[4].trim());
+                            int aniosServicio = Integer.parseInt(p[5].trim());
                             empleados.add(new Temporal(cedula, nombre, new IncentivoAntiguedad(),
-                                    2024, tarifaDiaria, diasActivos));
+                                    aniosServicio, tarifaDiaria, diasActivos));
                             break;
                         }
                         case "COMISIONISTA": {

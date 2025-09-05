@@ -23,6 +23,6 @@ package modelo;
 
         @Override
         public String toCSV() {
-            return "ASALARIADO;" + getCedula() + ";" + getNombre() + ";" + salarioMensual + ";" + salarioQuicena();
+            return "ASALARIADO;" + getCedula() + ";" + getNombre() + ";" + salarioMensual + ";" + salarioQuicena() + ";" + getAniosServicio();
         }
     }
